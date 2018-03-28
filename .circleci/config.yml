@@ -20,6 +20,10 @@ jobs:
           paths:
             - ~/.gradle
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+      - add_ssh_keys:
+ 			  fingerprints:
+ 			    	- "SHA256:Ibs+QbZaEVcQEEruV/f+k5e/QygFtKplqcSnDUxafbM"
+          
       - run:
           name: Run Tests
           command: ./gradlew lint test
@@ -28,6 +32,4 @@ jobs:
           destination: reports
       - store_test_results:
           path: app/build/test-results
-      - add_ssh_keys:
- 			  fingerprints:
- 			    	- "SHA256:Ibs+QbZaEVcQEEruV/f+k5e/QygFtKplqcSnDUxafbM"
+      
