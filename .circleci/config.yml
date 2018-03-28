@@ -30,7 +30,4 @@ jobs:
       - store_test_results:
           path: app/build/test-results
       
-- add_ssh_keys:
- 			  fingerprints:
- 			    	- "SHA256:Ibs+QbZaEVcQEEruV/f+k5e/QygFtKplqcSnDUxafbM"
-          
+
